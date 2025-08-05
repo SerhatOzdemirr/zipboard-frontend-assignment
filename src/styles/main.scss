@@ -1,0 +1,21 @@
+@import "variables";                
+@import "bootstrap/scss/bootstrap"; 
+@import "custom";                   
+
+body {
+  background-color: $white;
+  font-family: "DM Sans", sans-serif;
+}
+
+.header {
+  color: $color-header-light;
+  text-align: center;
+  font-size: $font-size-heading-desktop;
+}
+
+.container {
+  margin-top: 20px;
+  width: 1104px !important;
+  font-weight: bold;
+  position: relative; 
+}

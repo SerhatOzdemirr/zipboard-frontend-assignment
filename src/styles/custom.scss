@@ -1,0 +1,123 @@
+// src/styles/custom.scss
+
+// Bootstrap SCSS utilities
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Accordion base styles
+.accordion,
+.accordion-item,
+.accordion-button {
+  border-radius: 0 !important;
+  font-weight: bold;
+}
+
+.accordion {
+  &-item {
+    border: none;
+    border-top: 1px solid $light-gray !important;
+    border-bottom: 1px solid $light-gray !important;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    background-color: $white;
+  }
+  &-header {
+    background-color: $white;
+    border: none !important;
+    padding: 0 !important;
+    font-weight: bold;
+    color: $color-header-light;
+
+    .accordion-button {
+      background: none;
+      box-shadow: none;
+      color: $black;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &::after {
+        display: none !important;
+        margin-left: auto;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+
+  &-body {
+    padding: 1rem 1rem;
+  }
+}
+
+// Themed button
+.btn-theme {
+  outline: none;
+  border: none;
+  background-color: $color-header-light;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: $black;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .header {
+    font-size: $font-size-heading-mobile !important;
+    margin-top: 50px;
+  }
+
+  .container {
+    width: 100% !important;
+    padding: 0 15px;
+  }
+}
+
+// General container style (positioning)
+.container {
+  position: relative;
+}
+
+// Dark mode styles
+[data-theme="dark"] {
+  body {
+    background-color: $black;
+    color: $white;
+  }
+
+  .header {
+    color: $header-color-dark;
+  }
+
+  .accordion {
+    &-item {
+      background-color: $black;
+      border-color: $light-gray;
+    }
+
+    &-button {
+      color: $white;
+      background-color: $black;
+    }
+
+    &.collapsed {
+      background-color: $black;
+    }
+
+    &-body {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .btn-theme {
+    background-color: $header-color-dark;
+    color: $white;
+  }
+}
